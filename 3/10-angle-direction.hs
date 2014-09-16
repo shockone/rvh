@@ -1,1 +1,0 @@
--- 10. Write a function that calculates the turn made by three 2D points and returns a Direction.
