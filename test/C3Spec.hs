@@ -27,3 +27,7 @@ spec = do
 
     it "returns true for an empty list" $
       isPalindrome ([]::[Int]) `shouldBe` True
+
+  describe "sortByLength" $
+    it "sorts by length" $
+      sortByLength ["the", "a", "longest", "it"] `shouldBe` ["a", "it", "the", "longest"]
