@@ -7,6 +7,12 @@ palindrome xs = xs ++ reverse xs
 
 
 -- 5. Write a function that determines whether its input list is a palindrome.
+isPalindrome :: Eq a => [a] -> Bool
+isPalindrome []     = True
+isPalindrome [_]    = True
+isPalindrome (x:xs) = x == l && isPalindrome (tail reversed)
+    where reversed = reverse xs
+          l = head reversed
 
 
 -- 6. Create a function that sorts a list of lists based on the length of each sublist.
