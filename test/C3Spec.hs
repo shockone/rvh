@@ -31,3 +31,11 @@ spec = do
   describe "sortByLength" $
     it "sorts by length" $
       sortByLength ["the", "a", "longest", "it"] `shouldBe` ["a", "it", "the", "longest"]
+
+  describe "intersperse" $ do
+    it "doesn't put a separator into an empty list" $
+      intersperse ',' [] `shouldBe` ""
+    it "doesn't put a separator before the last element" $
+      intersperse ',' ["foo"] `shouldBe` "foo"
+    it "separates elements properly" $
+      intersperse ',' ["foo","bar","baz","quux"] `shouldBe` "foo,bar,baz,quux"

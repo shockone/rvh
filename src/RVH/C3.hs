@@ -1,7 +1,7 @@
 module RVH.C3 where
 
-import Data.List (sortBy)
-import Data.Ord (comparing)
+import           Data.List (sortBy)
+import           Data.Ord  (comparing)
 
 -- 4. Turn a list into a palindrome, i.e. it should read the same both backwards and forwards.
 --    For example, given the list [1,2,3], your function should return [1,2,3,3,2,1].
@@ -20,7 +20,7 @@ isPalindrome xs = all same zipped
 -- 6. Create a function that sorts a list of lists based on the length of each sublist.
 --    (You may want to look at the sortBy function from the Data.List module.)
 sortByLength :: [[a]] -> [[a]]
-sortByLength xs = sortBy (comparing length) xs
+sortByLength = sortBy (comparing length)
 
 -- 7. Define a function that joins a list of lists together using a separator value.
 -- intersperse :: a -> [[a]] -> [a]
@@ -36,6 +36,10 @@ sortByLength xs = sortBy (comparing length) xs
 -- "foo"
 -- ghci> intersperse ',' ["foo","bar","baz","quux"]
 -- "foo,bar,baz,quux"
+intersperse :: a -> [[a]] -> [a]
+intersperse _ [] = []
+intersperse _ [x] = x
+intersperse s (x:xs) = x ++ (s : intersperse s xs)
 
 
 -- 8. Using the binary tree type that we defined earlier in this chapter, write a function that will determine the height of the tree.
